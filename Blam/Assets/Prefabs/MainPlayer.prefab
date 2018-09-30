@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 20426468025249742}
   - component: {fileID: 81813011541131698}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: PlayerView
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621000817066804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.235, z: 0}
+  m_LocalPosition: {x: 0, y: 0.938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4215479020696432}
@@ -170,7 +170,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!81 &81813011541131698
 AudioListener:
