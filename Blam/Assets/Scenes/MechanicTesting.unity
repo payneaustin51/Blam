@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44502777, g: 0.4888187, b: 0.5424894, a: 1}
+  m_IndirectSpecularColor: {r: 0.39531934, g: 0.4123511, b: 0.40691787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,23 @@ Transform:
   m_Father: {fileID: 696041239}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &410387891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1498488899097390, guid: 9f1c7a71979cd644a8214a53698dc20d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1173481336}
+--- !u!114 &410387892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410387891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5023bb906651f234cbe7083b99cd23e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: 50e0d82c01ee91449bd566d2c94300be, type: 2}
 --- !u!1 &696041238
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +406,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826228688}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.820395, y: 1.331, z: -8.6280985}
+  m_LocalPosition: {x: -0.820395, y: 1.14, z: -8.6280985}
   m_LocalScale: {x: 1, y: 2.771, z: 24.914295}
   m_Children: []
   m_Father: {fileID: 696041239}
@@ -679,26 +696,6 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 114151460238776934, guid: 9f1c7a71979cd644a8214a53698dc20d,
-        type: 2}
-      propertyPath: JumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 54704913242151710, guid: 9f1c7a71979cd644a8214a53698dc20d,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54704913242151710, guid: 9f1c7a71979cd644a8214a53698dc20d,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114151460238776934, guid: 9f1c7a71979cd644a8214a53698dc20d,
-        type: 2}
-      propertyPath: GravityModifier
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f1c7a71979cd644a8214a53698dc20d, type: 2}
   m_IsPrefabAsset: 0
@@ -781,7 +778,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1246529718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.02, y: 1.331, z: 3.074}
+  m_LocalPosition: {x: -13.02, y: 1.14, z: 3.074}
   m_LocalScale: {x: 1, y: 2.771, z: 24.914276}
   m_Children: []
   m_Father: {fileID: 696041239}
@@ -1036,7 +1033,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781367456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.949999, y: 1.331, z: 3.074}
+  m_LocalPosition: {x: 10.949999, y: 1.14, z: 3.074}
   m_LocalScale: {x: 1, y: 2.771, z: 24.914276}
   m_Children: []
   m_Father: {fileID: 696041239}
@@ -1067,7 +1064,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1787354691}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.44, y: 1.331, z: 14.78}
+  m_LocalPosition: {x: -1.44, y: 1.14, z: 14.78}
   m_LocalScale: {x: 1, y: 2.771, z: 24.914295}
   m_Children: []
   m_Father: {fileID: 696041239}
@@ -1287,10 +1284,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870464838}
-  m_LocalRotation: {x: 0.40615657, y: -0.7312368, z: -0.122762986, w: 0.53409624}
+  m_LocalRotation: {x: 0.38407487, y: -0.80092627, z: -0.18033412, w: 0.42247277}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 14.733001, y: -114.38801, z: -48.571003}
+  m_LocalEulerAnglesHint: {x: 2.043, y: -125.33501, z: -50.183002}

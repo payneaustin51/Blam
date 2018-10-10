@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
 
     [Header("General Movement")]
     public float Speed = 10.0f;
-    private Vector3 InputDirection;
-    private Rigidbody Player_RB;
     public float JumpForce = 50.0f;
     public float GravityModifier = -50.0f;
+    private Rigidbody Player_RB;
+    private float LastPosition;
 
     [Header("Gun Settings")]
     public Gun EquippedGun;
@@ -36,20 +36,21 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
     //Player Movement (Moving forward/backwards and straffing)
     private void PlayerMovement() {
         //Input Velocity
-        InputDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         Player_RB.velocity = (transform.right * Input.GetAxis("Horizontal") * Speed) + (transform.forward * Input.GetAxis("Vertical") * Speed);
 
         //Jump Velocity
-        if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded())
-        {
-            Player_RB.interpolation = RigidbodyInterpolation.Interpolate;
-            Player_RB.AddForce(Vector3.up * JumpForce);
-        }
-        Player_RB.velocity += Vector3.up * GravityModifier;
-        Player_RB.interpolation = RigidbodyInterpolation.Extrapolate;
+        if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded(1.1f))
+            Player_RB.velocity += Vector3.up * JumpForce;
+
+        if ((LastPosition - transform.position.y) >= 0.0f)
+            Player_RB.velocity += Vector3.up * GravityModifier;
+        else
+            Player_RB.velocity += Vector3.up * GravityModifier / 4.0f;
+
+        LastPosition = this.transform.position.y;
     }
 
-    private bool CheckGrounded() { return Physics.Raycast(this.transform.position, Vector3.down, 1.1f); }
+    private bool CheckGrounded(float distance) { return Physics.Raycast(this.transform.position, Vector3.down, distance); }
 
     //Camera Controls/Player Rotation
     private void CameraMovement() {
