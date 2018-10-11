@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846982556277480}
   - component: {fileID: 95956536928355494}
+  - component: {fileID: 114298523819449996}
   m_Layer: 0
   m_Name: ProxyGun
   m_TagString: Untagged
@@ -754,14 +755,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee85c117f58987344961e987959baff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 17.5
-  JumpForce: 50
-  GravityModifier: -4
+  Speed: 50
+  JumpForce: 75
+  GravityModifier: 1.25
   EquippedGun: {fileID: 0}
   PlayerView: {fileID: 20426468025249742}
   Sensitivity: 2
   MinimumY: -60
   MaximumY: 60
+--- !u!114 &114298523819449996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498488899097390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5023bb906651f234cbe7083b99cd23e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunData: {fileID: 11400000, guid: 50e0d82c01ee91449bd566d2c94300be, type: 2}
 --- !u!136 &136739543681748966
 CapsuleCollider:
   m_ObjectHideFlags: 1

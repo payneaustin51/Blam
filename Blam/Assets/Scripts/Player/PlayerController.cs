@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
     public float GravityModifier = -50.0f;
     private Rigidbody Player_RB;
     private float LastPosition;
+    private float DecayJump;
+    private float GravAccel;
 
     [Header("Gun Settings")]
     public Gun EquippedGun;
@@ -40,14 +42,40 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
 
         //Jump Velocity
         if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded(1.1f))
+        {
             Player_RB.velocity += Vector3.up * JumpForce;
+            DecayJump = JumpForce;
+            GravAccel = 1.0f;
+        }
+      
+        if (DecayJump > 1.0f) {
+            Player_RB.velocity += Vector3.up * DecayJump;
+            DecayJump = DecayJump/1.25f;
+            Debug.Log(DecayJump);
+        }
 
+        else {
+            Player_RB.AddForce(Physics.gravity * GravityModifier * GravAccel);
+            //GravAccel *= 1.5f;
+            //Mathf.Clamp(GravAccel, 1.0f, 10.0f);
+            //Player_RB.velocity += Physics.gravity * GravityModifier;
+        }
+ 
+        /*
         if ((LastPosition - transform.position.y) >= 0.0f)
+        {
             Player_RB.velocity += Vector3.up * GravityModifier;
+            
+            //DecayJump = 0.0f;
+        }
         else
-            Player_RB.velocity += Vector3.up * GravityModifier / 4.0f;
-
+        {
+            Player_RB.velocity += Vector3.up * DecayJump;
+            DecayJump = DecayJump / 1.5f;
+        }
+        
         LastPosition = this.transform.position.y;
+        */
     }
 
     private bool CheckGrounded(float distance) { return Physics.Raycast(this.transform.position, Vector3.down, distance); }
