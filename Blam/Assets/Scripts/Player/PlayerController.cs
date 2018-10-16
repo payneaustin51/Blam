@@ -20,14 +20,15 @@ public class PlayerController : MonoBehaviour, ITakeDamage {
 
     [Header("Player Attributes")]
     [SerializeField] private float Health = 100.0f;
-
-    [Header("Current Gun Equipped")]
-    public Gun GunTest;
+    private PlayerShoot PShoot;
 
     void Awake() {
         Cursor.lockState = CursorLockMode.Locked;
+
         CController = this.GetComponent<CharacterController>();
+        PShoot = this.GetComponent<PlayerShoot>();
         PlayerView = FindObjectOfType<Camera>();
+
     }
 
     void Update() {
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour, ITakeDamage {
     //Shooting Call
     private void ShootGun() {
         if (Input.GetKey(KeyCode.Mouse0)) {
-            GunTest.Shoot(PlayerView.transform.position, PlayerView.transform.forward);
+            PShoot.Shoot(PlayerView.transform.position, PlayerView.transform.forward);
         }
     }
 

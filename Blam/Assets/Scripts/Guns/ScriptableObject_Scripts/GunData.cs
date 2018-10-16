@@ -10,6 +10,10 @@ public class GunData : ScriptableObject {
     public int AmmoCapacity;
     public float Range;
 
-    [Header("Physics Setting")]
+    [Header("Physics Settings")]
     public float ForcePushback;
+
+    [Header("Geometry/Animation Settings")]
+    public GameObject GunGeo;
+    public Vector3 Position;
 }

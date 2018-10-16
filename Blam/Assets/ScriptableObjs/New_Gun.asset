@@ -17,3 +17,5 @@ MonoBehaviour:
   AmmoCapacity: 0
   Range: 100
   ForcePushback: 1
+  GunGeo: {fileID: 1173781370740390, guid: cd98ec0663480524c83e76e35cc45de7, type: 2}
+  Position: {x: 0.13, y: -0.114, z: 0.53}
