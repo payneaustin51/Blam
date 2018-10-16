@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be6bed3a080764cb8d0b9a0aaf326a, type: 3}
   m_Name: New_Gun
   m_EditorClassIdentifier: 
-  DamagePoints: 10
+  DamagePoints: 1
   RateOfFire: 5
   ReloadTime: 2.5
-  AmmoCapacity: 30
+  AmmoCapacity: 0
   Range: 100
-  SplashDamage: 0
+  ForcePushback: 1

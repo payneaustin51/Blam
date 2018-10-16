@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846982556277480}
   - component: {fileID: 95956536928355494}
-  - component: {fileID: 114298523819449996}
+  - component: {fileID: 114070266466597894}
   m_Layer: 0
   m_Name: ProxyGun
   m_TagString: Untagged
@@ -125,10 +125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197862612125774}
-  - component: {fileID: 33962018843144150}
-  - component: {fileID: 23516131887871292}
-  - component: {fileID: 136739543681748966}
-  - component: {fileID: 54704913242151710}
+  - component: {fileID: 143297614924394398}
   - component: {fileID: 114151460238776934}
   m_Layer: 0
   m_Name: MainPlayer
@@ -273,8 +270,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498488899097390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -0.11399996, z: 0.44}
-  m_LocalScale: {x: 1, y: 1, z: 0.33}
+  m_LocalPosition: {x: 0.13, y: -0.11399996, z: 0.53}
+  m_LocalScale: {x: 1, y: 1, z: 0.54}
   m_Children:
   - {fileID: 4031830396315948}
   - {fileID: 4288736293430730}
@@ -478,41 +475,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23516131887871292
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621000817066804}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23523179960585070
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -625,28 +587,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347102464294614}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33962018843144150
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621000817066804}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54704913242151710
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621000817066804}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 2
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!65 &65025949406415394
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -744,26 +684,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114151460238776934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621000817066804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee85c117f58987344961e987959baff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 50
-  JumpForce: 75
-  GravityModifier: 1.25
-  EquippedGun: {fileID: 0}
-  PlayerView: {fileID: 20426468025249742}
-  Sensitivity: 2
-  MinimumY: -60
-  MaximumY: 60
---- !u!114 &114298523819449996
+--- !u!114 &114070266466597894
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -775,8 +696,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 50e0d82c01ee91449bd566d2c94300be, type: 2}
---- !u!136 &136739543681748966
-CapsuleCollider:
+--- !u!114 &114151460238776934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621000817066804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee85c117f58987344961e987959baff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 12
+  JumpForce: 3
+  GravityModifier: 1
+  Sensitivity: 2
+  MinimumY: -60
+  MaximumY: 60
+  Health: 100
+  GunTest: {fileID: 114070266466597894}
+--- !u!143 &143297614924394398
+CharacterController:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -784,7 +724,11 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  serializedVersion: 2
   m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}

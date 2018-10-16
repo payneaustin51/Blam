@@ -1,5 +1,3 @@
-﻿public interface ICharacterInterface {
-
+﻿public interface ITakeDamage {
     void TakeDamage(int DamagePoints);
-
 }

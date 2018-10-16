@@ -2,32 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, ICharacterInterface {
+public class PlayerController : MonoBehaviour, ITakeDamage {
 
     [Header("General Movement")]
-    public float Speed = 10.0f;
-    public float JumpForce = 50.0f;
-    public float GravityModifier = -50.0f;
-    private Rigidbody Player_RB;
-    private float LastPosition;
-    private float DecayJump;
-    private float GravAccel;
-
-    [Header("Gun Settings")]
-    public Gun EquippedGun;
+    [SerializeField] private float Speed = 10.0f;
+    [SerializeField] private float JumpForce = 50.0f;
+    [SerializeField] private float GravityModifier = 1.0f;
+    private Vector3 Movement = Vector3.zero;
+    private CharacterController CController;
 
     [Header("View Settings")]
-    public Camera PlayerView;
-    [Range(1, 10)]public int Sensitivity = 2;
-    public float MinimumY = -60.0f;
-    public float MaximumY = 60.0f;
+    [SerializeField] [Range(1, 10)] private int Sensitivity = 2;
+    [SerializeField] private float MinimumY = -60.0f;
+    [SerializeField] private float MaximumY = 60.0f;
     private float RotationY = 0.0f;
-    
+    private Camera PlayerView;
 
-	// Use this for initialization
-	void Start () {
+    [Header("Player Attributes")]
+    [SerializeField] private float Health = 100.0f;
+
+    [Header("Current Gun Equipped")]
+    public Gun GunTest;
+
+    void Awake() {
         Cursor.lockState = CursorLockMode.Locked;
-        Player_RB = this.gameObject.GetComponent<Rigidbody>();
+        CController = this.GetComponent<CharacterController>();
+        PlayerView = FindObjectOfType<Camera>();
+    }
+
+    void Update() {
+        ShootGun();
     }
 
     void FixedUpdate() {
@@ -35,49 +39,16 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
         CameraMovement();
     }
 
-    //Player Movement (Moving forward/backwards and straffing)
+    //Player Movement (Forwards/Backwards/Strafing/Jumping)
     private void PlayerMovement() {
-        //Input Velocity
-        Player_RB.velocity = (transform.right * Input.GetAxis("Horizontal") * Speed) + (transform.forward * Input.GetAxis("Vertical") * Speed);
+        if(Input.GetKeyDown(KeyCode.Space) && CheckGrounded(1.1f)) {
+            Movement.y = JumpForce;
+        }
+        Movement.y -= -(Physics.gravity.y) * Time.deltaTime * GravityModifier;
+        Movement = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical")) + (transform.up * Movement.y);
 
-        //Jump Velocity
-        if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded(1.1f))
-        {
-            Player_RB.velocity += Vector3.up * JumpForce;
-            DecayJump = JumpForce;
-            GravAccel = 1.0f;
-        }
-      
-        if (DecayJump > 1.0f) {
-            Player_RB.velocity += Vector3.up * DecayJump;
-            DecayJump = DecayJump/1.25f;
-            Debug.Log(DecayJump);
-        }
-
-        else {
-            Player_RB.AddForce(Physics.gravity * GravityModifier * GravAccel);
-            //GravAccel *= 1.5f;
-            //Mathf.Clamp(GravAccel, 1.0f, 10.0f);
-            //Player_RB.velocity += Physics.gravity * GravityModifier;
-        }
- 
-        /*
-        if ((LastPosition - transform.position.y) >= 0.0f)
-        {
-            Player_RB.velocity += Vector3.up * GravityModifier;
-            
-            //DecayJump = 0.0f;
-        }
-        else
-        {
-            Player_RB.velocity += Vector3.up * DecayJump;
-            DecayJump = DecayJump / 1.5f;
-        }
-        
-        LastPosition = this.transform.position.y;
-        */
+        CController.Move(Movement * Speed * Time.deltaTime);
     }
-
     private bool CheckGrounded(float distance) { return Physics.Raycast(this.transform.position, Vector3.down, distance); }
 
     //Camera Controls/Player Rotation
@@ -90,7 +61,18 @@ public class PlayerController : MonoBehaviour, ICharacterInterface {
         this.transform.localEulerAngles = new Vector3(0.0f, RotationX, 0.0f);
     }
 
+    //Shooting Call
+    private void ShootGun() {
+        if (Input.GetKey(KeyCode.Mouse0)) {
+            GunTest.Shoot(PlayerView.transform.position, PlayerView.transform.forward);
+        }
+    }
+
+    //Taking Damage (Interface method)
     public void TakeDamage(int DamagePoints) {
-        Debug.Log("asdf");
+        Health -= DamagePoints;
+        if(Health < 0.0f) {
+            Destroy(this.gameObject);
+        }
     }
 }
