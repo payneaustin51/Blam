@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e488d1bbc9491489cf66d8ca215012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 11400000, guid: 50e0d82c01ee91449bd566d2c94300be, type: 2}
+  GunData: {fileID: 11400000, guid: 50e0d82c01ee91449bd566d2c94300be, type: 2}
 --- !u!114 &114151460238776934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 12
   JumpForce: 2.5
-  GravityModifier: 1
+  GravityModifier: 0.7
   Sensitivity: 2
   MinimumY: -60
   MaximumY: 60

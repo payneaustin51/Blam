@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour, ITakeDamage {
         CController = this.GetComponent<CharacterController>();
         PShoot = this.GetComponent<PlayerShoot>();
         PlayerView = FindObjectOfType<Camera>();
-
     }
 
     void Update() {

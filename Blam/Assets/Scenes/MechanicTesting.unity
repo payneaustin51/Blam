@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 47920482}
   m_LocalRotation: {x: -0, y: 0.25569248, z: -0, w: 0.9667582}
-  m_LocalPosition: {x: -3.99, y: 0.59, z: -0.8599999}
+  m_LocalPosition: {x: -3.99, y: 1.452, z: -0.8599999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 991536345}
@@ -158,9 +158,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &47920485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  ExplosionSystem: {fileID: 198869782828732868, guid: a52e5cfc476bc1c42a2b9f57b3912ebe,
+    type: 2}
 --- !u!1 &116723662
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +878,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340390757}
   m_LocalRotation: {x: -0, y: 0.25569248, z: -0, w: 0.9667582}
-  m_LocalPosition: {x: -6.37, y: 0.59, z: 0.49}
+  m_LocalPosition: {x: -6.37, y: 1.452, z: 0.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 991536345}
@@ -894,9 +896,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &1340390760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -963,6 +965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  ExplosionSystem: {fileID: 198869782828732868, guid: a52e5cfc476bc1c42a2b9f57b3912ebe,
+    type: 2}
 --- !u!1 &1781367456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1164,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859541256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.37, y: 0.59, z: -2.14}
+  m_LocalPosition: {x: -6.37, y: 1.452, z: -2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 991536345}
@@ -1178,9 +1182,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &1859541259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1247,6 +1251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  ExplosionSystem: {fileID: 198869782828732868, guid: a52e5cfc476bc1c42a2b9f57b3912ebe,
+    type: 2}
 --- !u!1 &1870464838
 GameObject:
   m_ObjectHideFlags: 0

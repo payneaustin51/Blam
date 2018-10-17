@@ -14,8 +14,9 @@ MonoBehaviour:
   DamagePoints: 1
   RateOfFire: 5
   ReloadTime: 2.5
-  AmmoCapacity: 0
-  Range: 100
-  ForcePushback: 1
+  AmmoCapacity: 90
+  Range: 1000
+  ForcePushback: 1.2
+  BulletSize: 0.5
   GunGeo: {fileID: 1173781370740390, guid: cd98ec0663480524c83e76e35cc45de7, type: 2}
   Position: {x: 0.13, y: -0.114, z: 0.53}

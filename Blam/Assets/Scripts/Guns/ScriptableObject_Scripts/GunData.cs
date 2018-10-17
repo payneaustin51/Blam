@@ -5,13 +5,15 @@ using System.Collections;
 public class GunData : ScriptableObject {
     [Header("General Settings")]
     public int DamagePoints;
-    public float RateOfFire;
+    public int RateOfFire;
     public float ReloadTime;
-    public int AmmoCapacity;
+    public int MaxAmmoCapacity;
+    public int AmmoClipSize;
     public float Range;
 
     [Header("Physics Settings")]
     public float ForcePushback;
+    public float BulletSize;
 
     [Header("Geometry/Animation Settings")]
     public GameObject GunGeo;
