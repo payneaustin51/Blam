@@ -45,9 +45,10 @@ public class PlayerController : MonoBehaviour, ITakeDamage {
             Movement.y = JumpForce;
         }
         Movement.y -= -(Physics.gravity.y) * Time.deltaTime * GravityModifier;
-        Movement = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical")) + (transform.up * Movement.y);
+        Movement = (transform.right * (Input.GetAxis("Horizontal") * Speed * (0.10f * Mathf.Sin(Time.time * 10.0f) + 0.50f)) + (transform.forward * (Input.GetAxis("Vertical") * Speed * (0.10f * Mathf.Sin(Time.time * 10.0f) + 0.5f))) + (transform.up * Movement.y));
+        //Movement = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical")) + (transform.up * Movement.y);
 
-        CController.Move(Movement * Speed * Time.deltaTime);
+        CController.Move(Movement * Time.deltaTime);
     }
     private bool CheckGrounded(float distance) { return Physics.Raycast(this.transform.position, Vector3.down, distance); }
 
